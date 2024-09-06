@@ -1,0 +1,8 @@
+SELECT 
+    p.ProductName,
+    c.CategoryName
+FROM Products p --таблица продуктов
+LEFT JOIN ProductCategories pc -- соединительная таблица для обеспечения связи многие ко многим
+  ON p.ProductID = pc.ProductID
+LEFT JOIN Categories c --таблица категорий
+  ON pc.CategoryID = c.CategoryID;
